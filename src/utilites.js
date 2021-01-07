@@ -5,6 +5,7 @@ const placesPath = join(__dirname, "./services/places/places.json");
 const usersPath = join(__dirname, "./services/users/users.json");
 const ownersPath = join(__dirname, "./services/owners/owners.json");
 const reviewsPath = join(__dirname, "./services/reviews/reviews.json");
+const bookingsPath = join(__dirname, "./services/bookings/bookings.json");
 
 const readDB = async (filePath) => {
   try {
@@ -31,4 +32,6 @@ module.exports = {
   writeReviews: async (reviewsData) => writeDB(reviewsPath, reviewsData),
   getOwners: async () => readDB(ownersPath),
   writeOwners: async (ownersData) => writeDB(ownersPath, ownersData),
+  getBookings: async () => readDB(bookingsPath),
+  writeBookings: async (bookingsData) => writeDB(bookingsPath, bookingsData),
 };
